@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio-benchmark-container
+    image: portfolio-benchmark-image:latest
+    ports:
+      - "8888:8888"
+      - "8080:8080"
+    volumes:
+      - ./notebooks:/app
+    tty: true
+
